@@ -1695,8 +1695,6 @@ impl Bindings {
     ) -> Result<Bindings, ()> {
         ensure_libclang_is_loaded();
 
-        debug!("Generating bindings, libclang at {}", clang_sys::get_library().unwrap().path().display());
-
         options.build();
 
         fn detect_include_paths(options: &mut BindgenOptions) {
